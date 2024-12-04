@@ -102,7 +102,7 @@ Authorization: Bearer {JWT_TOKEN}
 
 ### Postman Collection
 
-To easily test the API endpoints, you can download the Postman collection file and import it into Postman.
+To easily test the API endpoints, you can download the Postman collection file : "RBAC.collection_json.json" and import it into Postman.
 
 #### Import the collection:
 1. Open Postman.
