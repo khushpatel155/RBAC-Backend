@@ -24,27 +24,25 @@ This is a backend API that implements Role-Based Access Control (RBAC) for manag
 ### Resources:
 - **Records**: Admins, Managers, and Users can perform actions on records (create, read, update, delete).
 - **Permissions**: Three permission levels available for each resource:
-  - `0`: No access
-  - `1`: Read access
-  - `2`: Read and write access (create, update, delete)
+  - `0`: Read access
+  - `1`: Read and Write access
+  - `2`: Read,Write and Delete access
 
 ## Table of Contents
 - [Tech Stack](#tech-stack)
 - [Setup Instructions](#setup-instructions)
-- [API Endpoints](#api-endpoints)
-- [Testing in Postman](#testing-in-postman)
-- [Permissions Hierarchy](#permissions-hierarchy)
 - [Authentication](#authentication)
+- [Testing in Postman](#testing-in-postman)
 - [Run the Project](#run-the-project)
   
 
 ## Tech Stack
 
-- **Node.js**: JavaScript runtime environment
-- **Express.js**: Web framework for Node.js
-- **JWT**: JSON Web Token for authentication
-- **MySQL**: Relational database for storing user data and records
-- **Postman**: API testing tool
+- **Node.js**
+- **Express.js**
+- **JWT**
+- **MySQL**
+- **Postman**
 
 ---
 
@@ -70,23 +68,12 @@ npm install
 Create a `.env` file in the root of the project and add the following variables:
 
 ```bash
-# Port on which the server will run
-PORT=3000
-
-# Hostname of the MySQL database (usually localhost)
-DB_HOST=localhost
-
-# MySQL database username
-DB_USER=root
-
-# Password for your MySQL user
-DB_PASSWORD=yourpassword
-
-# Name of the MySQL database to be used
-DB_NAME=rbac
-
-# Secret key used to sign the JWT tokens
-JWT_SECRET=your-secret-key
+PORT=3000    # Port on which the server will run
+DB_HOST=localhost  # Hostname of the MySQL database (usually localhost)
+DB_USER=root  # MySQL database username
+DB_PASSWORD=yourpassword  # Password for your MySQL user
+DB_NAME=rbac # Name of the MySQL database to be used
+JWT_SECRET=your-secret-key  # Secret key used to sign the JWT tokens
 ```
 ### 4. Start the server
 
@@ -96,6 +83,18 @@ Run the following command to start the server:
 npm start
 ```
 The server will be running on http://localhost:3000.
+
+## Authentication
+
+JWT tokens are used for authentication. After successful login, you will receive a JWT token, which should be included in the `Authorization` header of subsequent requests.
+
+Example:
+
+```bash
+Authorization: Bearer {JWT_TOKEN}
+```
+
+---
 
 ## Testing
 
@@ -111,22 +110,6 @@ To easily test the API endpoints, you can download the Postman collection file a
 
 ---
 
-### Testing Admin Endpoints
-Here is the updated **workflow** as per your request, following the same format and structure:
-
----
-
-## Authentication
-
-JWT tokens are used for authentication. After successful login, you will receive a JWT token, which should be included in the `Authorization` header of subsequent requests.
-
-Example:
-
-```bash
-Authorization: Bearer {JWT_TOKEN}
-```
-
----
 
 ### **Admin Workflow**
 
