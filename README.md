@@ -1,4 +1,4 @@
-# RBAC (Role-Based Access Control) Backend API
+# RBAC (Role-Based Access Control)
 
 This is a backend API that implements Role-Based Access Control (RBAC) for managing user roles and permissions. The API allows admins to register users, assign roles, update permissions, and perform CRUD operations on records. The system has three user roles: **Admin**, **Manager**, and **User**, each with different levels of access.
 
@@ -58,8 +58,8 @@ This is a backend API that implements Role-Based Access Control (RBAC) for manag
 Clone the repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/your-username/rbac-backend.git
-cd rbac-backend
+git clone https://github.com/khushpatel155/RBAC-Backend
+cd RBAC-backend
 ```
 ### 2. Install dependencies
 
@@ -86,7 +86,7 @@ DB_USER=root
 DB_PASSWORD=yourpassword
 
 # Name of the MySQL database to be used
-DB_NAME=rbac_db
+DB_NAME=rbac
 
 # Secret key used to sign the JWT tokens
 JWT_SECRET=your-secret-key
@@ -99,66 +99,6 @@ Run the following command to start the server:
 npm start
 ```
 The server will be running on http://localhost:3000.
-
-## API Endpoints
-
-### Admin Endpoints
-
-- **POST /auth/register** - Register as an admin  
-  Register a new admin user with a username, password, and role.
-
-- **POST /auth/login** - Admin login  
-  Admin user login to authenticate and obtain a JWT token.
-
-- **POST /records** - Create a new record  
-  Admin can create a new record with details like firstname, lastname, and email.
-
-- **GET /records** - Read all records  
-  Admin can read all the records from the database.
-
-- **DELETE /records/:id** - Delete a record  
-  Admin can delete a specific record by providing the record ID in the URL parameter.
-
-- **PUT /auth/permissions/:id** - Update user permissions (Admin only)  
-  Admin can update the permissions of any user by changing their access rights (read/write/delete).
-
----
-
-### Manager Endpoints
-
-- **POST /auth/register** - Register as a manager  
-  Register a new manager user with a username, password, and role.
-
-- **POST /auth/login** - Manager login  
-  Manager user login to authenticate and obtain a JWT token.
-
-- **POST /records** - Create a new record  
-  Manager can create a new record (if they have permission granted by Admin).
-
-- **GET /records** - Read all records  
-  Manager can read all the records from the database.
-
-- **DELETE /records/:id** - Delete a record (if permission granted by Admin)  
-  Manager can delete a specific record only if permission has been granted by Admin.
-
----
-
-### User Endpoints
-
-- **POST /auth/register** - Register as a user  
-  Register a new user with a username, password, and role.
-
-- **POST /auth/login** - User login  
-  User login to authenticate and obtain a JWT token.
-
-- **GET /records** - Read all records  
-  User can read all the records available in the database.
-
-- **POST /records** - Create a new record (if permission granted by Admin)  
-  User can create a new record only if the Admin has granted them permission.
-
-- **DELETE /records/:id** - Delete a record (if permission granted by Admin)  
-  User can delete a specific record only if the Admin has granted them permission.
 
 ## Testing
 
@@ -176,6 +116,18 @@ To easily test the API endpoints, you can download the Postman collection file a
 
 ### Testing Admin Endpoints
 Here is the updated **workflow** as per your request, following the same format and structure:
+
+---
+
+## Authentication
+
+JWT tokens are used for authentication. After successful login, you will receive a JWT token, which should be included in the `Authorization` header of subsequent requests.
+
+Example:
+
+```bash
+Authorization: Bearer {JWT_TOKEN}
+```
 
 ---
 
@@ -315,4 +267,16 @@ Here is the updated **workflow** as per your request, following the same format 
      - Authorization: `Bearer {JWT_TOKEN}`
 
 ---
+
+## Run the Project
+
+1. Clone the repository using the link above.
+2. Install the dependencies using `npm install`.
+3. Set up your `.env` file with the correct MySQL connection settings.
+4. Run the server using `npm start`.
+5. Use Postman or any other API testing tool to test the endpoints.
+
+---
+
+
 
