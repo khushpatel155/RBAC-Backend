@@ -21,8 +21,6 @@ This is a backend API that implements Role-Based Access Control (RBAC) for manag
 
 - **Manager**: A **Manager** can be granted the permission to **delete** records by the Admin.
 
----
-
 ### Resources:
 - **Records**: Admins, Managers, and Users can perform actions on records (create, read, update, delete).
 - **Permissions**: Three permission levels available for each resource:
@@ -38,8 +36,7 @@ This is a backend API that implements Role-Based Access Control (RBAC) for manag
 - [Permissions Hierarchy](#permissions-hierarchy)
 - [Authentication](#authentication)
 - [Run the Project](#run-the-project)
-
----
+  
 
 ## Tech Stack
 
