@@ -1,45 +1,53 @@
-﻿# RBAC-Backend
-RBAC (Role-Based Access Control) Backend API
-This is a backend API that implements Role-Based Access Control (RBAC) for managing user roles and permissions. The API allows admins to register users, assign roles, and update permissions, as well as perform CRUD operations on records. The system has three user roles: Admin, Manager, and User, each with different levels of access.
+# RBAC (Role-Based Access Control) Backend API
 
-Features
-Admin: Can create, read, and delete records, update user permissions, and manage all roles.
+This is a backend API that implements Role-Based Access Control (RBAC) for managing user roles and permissions. The API allows admins to register users, assign roles, update permissions, and perform CRUD operations on records. The system has three user roles: **Admin**, **Manager**, and **User**, each with different levels of access.
 
-Manager: Can create and read records but cannot delete them by default. Admin can update their permissions to enable deletion rights.
+## Features
+- **Admin**: Can create, read, and delete records, update user permissions, and manage all roles.
+- **Manager**: Can create and read records but cannot delete them by default. Admin can update their permissions to enable deletion rights.
+- **User**: Can only read records. Admin can update their permissions to allow them to create or delete records.
 
-User: Can only read records. Admin can update their permissions to allow them to create or delete records.
+### Resources:
+- **Records**: Admins, Managers, and Users can perform actions on records (create, read, update, delete).
+- **Permissions**: Three permission levels available for each resource:
+  - `0`: No access
+  - `1`: Read access
+  - `2`: Read and write access (create, update, delete)
 
-Resources:
+## Table of Contents
+- [Tech Stack](#tech-stack)
+- [Setup Instructions](#setup-instructions)
+- [API Endpoints](#api-endpoints)
+- [Testing in Postman](#testing-in-postman)
+- [Permissions Hierarchy](#permissions-hierarchy)
+- [Authentication](#authentication)
+- [Run the Project](#run-the-project)
 
-Records: Admins, Managers, and Users can perform actions on records (create, read, update, delete).
-Permissions: Three permission levels available for each resource:
-0: No access
-1: Read access
-2: Read and write access (create, update, delete)
-Table of Contents
-Tech Stack
-Setup Instructions
-API Endpoints
-Testing in Postman
-Permissions Hierarchy
-Authentication
-Run the Project
-Tech Stack
-Node.js: JavaScript runtime environment
-Express.js: Web framework for Node.js
-JWT: JSON Web Token for authentication
-MySQL: Relational database for storing user data and records
-Postman: API testing tool
-Setup Instructions
-1. Clone the repository
-bash
-Copy code
+---
+
+## Tech Stack
+
+- **Node.js**: JavaScript runtime environment
+- **Express.js**: Web framework for Node.js
+- **JWT**: JSON Web Token for authentication
+- **MySQL**: Relational database for storing user data and records
+- **Postman**: API testing tool
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/your-username/rbac-backend.git
 cd rbac-backend
-2. Install dependencies
+
+### 2. Install dependencies
 bash
 Copy code
 npm install
+This command will install all the required dependencies listed in package.json.
 3. Setup environment variables
 Create a .env file in the root of the project and add the following variables:
 
@@ -232,6 +240,4 @@ A User cannot create or delete records.
 A Manager cannot delete records.
 After Admin updates permissions:
 A User can be granted the permission to create and delete records.
-A Manager can be granted the permission to delete records.
-Authentication
-This application uses JWT (JSON Web Tokens) for authentication. After a successful login, the server generates a token that must be sent
+A Manager can be granted the permission to delete records. 
