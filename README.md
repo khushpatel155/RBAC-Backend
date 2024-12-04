@@ -32,7 +32,7 @@ This is a backend API that implements Role-Based Access Control (RBAC) for manag
 - [Tech Stack](#tech-stack)
 - [Setup Instructions](#setup-instructions)
 - [Authentication](#authentication)
-- [Testing in Postman](#testing-in-postman)
+- [Testing](#testing-in-postman)
 - [Run the Project](#run-the-project)
   
 
@@ -84,6 +84,8 @@ npm start
 ```
 The server will be running on http://localhost:3000.
 
+---
+
 ## Authentication
 
 JWT tokens are used for authentication. After successful login, you will receive a JWT token, which should be included in the `Authorization` header of subsequent requests.
@@ -108,7 +110,6 @@ To easily test the API endpoints, you can download the Postman collection file a
 3. Select the **"Upload Files"** tab and choose the downloaded Postman collection file.
 4. Once imported, you can start testing the API endpoints.
 
----
 
 
 ### **Admin Workflow**
