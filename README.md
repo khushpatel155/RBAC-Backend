@@ -54,7 +54,7 @@ Clone the repository to your local machine using the following command:
 
 ```bash
 git clone https://github.com/khushpatel155/RBAC-Backend
-cd RBAC-backend
+cd RBAC-Backend
 ```
 ### 2. Install dependencies
 
