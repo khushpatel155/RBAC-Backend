@@ -74,6 +74,7 @@ DB_USER=root  # MySQL database username
 DB_PASSWORD=yourpassword  # Password for your MySQL user
 DB_NAME=rbac # Name of the MySQL database to be used
 JWT_SECRET=your-secret-key  # Secret key used to sign the JWT tokens
+JWT_EXPIRES_IN=1h  # Time after token will ne expire
 ```
 ### 4. Start the server
 
