@@ -1,6 +1,6 @@
 # RBAC (Role-Based Access Control)
 
-This is a backend project that implements Role-Based Access Control (RBAC) for managing user roles and permissions. The API allows admins to register users, assign roles, update permissions, and perform CRUD operations on records. The system has three user roles: **Admin**, **Manager**, and **User**, each with different levels of access.
+This is a backend project that implements Role-Based Access Control (RBAC) for managing user roles and permissions. This allows admins to register users, assign roles, update permissions, and perform CRUD operations on records. The system has three user roles: **Admin**, **Manager**, and **User**, each with different levels of access.
 
 ## Features
 - **Admin**: Can create, read, and delete records, update user permissions, and manage all roles.
